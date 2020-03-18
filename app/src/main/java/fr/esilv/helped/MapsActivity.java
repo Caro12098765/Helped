@@ -19,12 +19,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-
-
     }
 
 
@@ -40,17 +38,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        // Add a marker in Paris and move the camera
-        LatLng courbevoie1 = new LatLng(48.890151,2.253556);
-        LatLng courbevoie2 = new LatLng(48.897803,2.242299);
-        LatLng courbevoie3 = new LatLng(48.901139,2.250332);
+        LatLng marker1 = new LatLng(48.890151,2.253556);
+        LatLng marker2 = new LatLng(48.897803,2.242299);
+        LatLng marker3 = new LatLng(48.901139,2.250332);
 
+        mMap.addMarker(new MarkerOptions().position(marker1).title("Window cleaning"));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(marker1, 13));
 
-        mMap.addMarker(new MarkerOptions().position(courbevoie1).title("Window cleaning"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(courbevoie1));
-        mMap.addMarker(new MarkerOptions().position(courbevoie2).title("Furniture assembly"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(courbevoie2));
-        mMap.addMarker(new MarkerOptions().position(courbevoie3).title("Mow the lawn"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(courbevoie3));
+        mMap.addMarker(new MarkerOptions().position(marker2).title("Furniture assembly"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(marker2));
+
+        mMap.addMarker(new MarkerOptions().position(marker3).title("Mow the lawn"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(marker3));
     }
+
+
+
 }
