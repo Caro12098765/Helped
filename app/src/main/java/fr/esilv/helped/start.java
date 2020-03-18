@@ -13,5 +13,12 @@ public class start extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.start);
 
+        findViewById(R.id.start_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(start.this, MapsActivity.class));
+            }
+        });
+
     }
 }
