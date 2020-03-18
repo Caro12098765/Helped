@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="109dp"
+        android:src="@drawable/helped_logo"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hello !"
+        android:fontFamily="sans-serif-light"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold"
+        android:layout_marginTop="60dp"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/logo"  />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome in the Helped community ! You are now a helper. Here you can find people arround you ready to help you, ready to fix your problems and you can help others too ! Enjoy HELPED !"
+        android:fontFamily="sans-serif-light"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_marginTop="60dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/welcome"  />
+
+
+
+    <Button
+        android:id="@+id/signUP_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start !"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:fontFamily="monospace"
+        app:layout_constraintTop_toBottomOf="@id/text"
+        android:layout_marginTop="80dp"
+        style="?android:attr/borderlessButtonStyle"
+        android:background="@drawable/button_background"
+        android:textColor="@drawable/button_color"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
