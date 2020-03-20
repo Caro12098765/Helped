@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="20dp"
+    android:layout_marginLeft="30dp"
+    android:layout_marginRight="30dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="109dp"
+        android:src="@drawable/helped_logo"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/profile_info_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Profile information"
+        android:fontFamily="sans-serif-light"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/logo"  />
+
+    <ImageView
+        android:id="@+id/profile_picture"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="80dp"
+        app:layout_constraintTop_toBottomOf="@id/profile_info_title"/>
+
+    <Button
+        android:id="@+id/uploadImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upload Image"
+        android:padding="16dp"
+        android:textColor="@drawable/button_color"
+        android:background="@drawable/button_background"
+        app:layout_constraintTop_toBottomOf="@id/profile_picture"
+        app:layout_constraintStart_toStartOf="@id/profile_picture"/>
+
+    <EditText
+        android:id="@+id/dob"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:inputType="date"
+        android:hint="Date of birth"
+        android:layout_marginTop="25dp"
+        android:theme="@style/MyEditTextTheme"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintTop_toBottomOf="@id/uploadImage"
+        />
+
+    <CheckBox
+        android:id="@+id/CheckBoxResponseF"
+        android:layout_height="wrap_content"
+        android:text="F"
+        android:layout_marginTop="70dp"
+        android:theme="@style/MyEditTextTheme"
+        android:layout_marginLeft="100dp"
+        app:layout_constraintStart_toEndOf="@id/profile_picture"
+        app:layout_constraintTop_toBottomOf="@id/profile_info_title"
+        android:layout_width="wrap_content"/>
+
+    <CheckBox
+        android:id="@+id/CheckBoxResponseM"
+        android:layout_height="wrap_content"
+        android:text="M"
+        android:theme="@style/MyEditTextTheme"
+        app:layout_constraintStart_toEndOf="@id/CheckBoxResponseF"
+        app:layout_constraintTop_toBottomOf="@id/profile_info_title"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="30dp"
+        android:layout_width="wrap_content"/>
+
+    <EditText
+        android:id="@+id/lastName"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:hint="Last name"
+        android:layout_marginTop="50dp"
+        android:theme="@style/MyEditTextTheme"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintStart_toEndOf="@id/uploadImage"
+        app:layout_constraintTop_toBottomOf="@id/CheckBoxResponseF"
+        android:inputType="textPersonName"/>
+
+    <EditText
+        android:id="@+id/firstName"
+        android:layout_height="wrap_content"
+        android:hint="Name"
+        android:layout_marginTop="50dp"
+        android:theme="@style/MyEditTextTheme"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintStart_toEndOf="@id/lastName"
+        app:layout_constraintTop_toBottomOf="@id/CheckBoxResponseF"
+        android:inputType="textPersonName"
+        android:layout_width="wrap_content"/>
+
+    <EditText
+        android:id="@+id/address"
+        android:layout_height="wrap_content"
+        android:hint="Address"
+        android:theme="@style/MyEditTextTheme"
+        app:layout_constraintTop_toBottomOf="@id/dob"
+        android:inputType="textPostalAddress"
+        android:layout_width="fill_parent"/>
+
+    <EditText
+        android:id="@+id/phoneNumber"
+        android:layout_height="wrap_content"
+        android:hint="Phone number"
+        app:layout_constraintTop_toBottomOf="@id/address"
+        android:inputType="phone"
+        android:theme="@style/MyEditTextTheme"
+        android:layout_width="fill_parent"/>
+
+    <EditText
+        android:id="@+id/job"
+        android:layout_height="wrap_content"
+        android:hint="Job"
+        android:theme="@style/MyEditTextTheme"
+        app:layout_constraintTop_toBottomOf="@id/phoneNumber"
+        android:inputType="text"
+        android:layout_width="fill_parent"/>
+
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:layout_marginTop="20dp"
+        android:padding="16dp"
+        android:theme="@style/MyEditTextTheme"
+        android:textColor="@drawable/button_color"
+        android:background="@drawable/button_background"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:fontFamily="monospace"
+        app:layout_constraintTop_toBottomOf="@id/job"/>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

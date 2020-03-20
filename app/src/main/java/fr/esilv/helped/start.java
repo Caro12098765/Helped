@@ -16,7 +16,7 @@ public class start extends AppCompatActivity {
         findViewById(R.id.start_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(start.this, MapsActivity.class));
+                startActivity(new Intent(start.this, profileCreation.class));
             }
         });
 

@@ -27,10 +27,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });*/
 
-        findViewById(R.id.signIN_button).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.sign_up).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, sign_up.class));
+            }
+        });
+
+        findViewById(R.id.signIN_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, MapsActivity.class));
             }
         });
 
