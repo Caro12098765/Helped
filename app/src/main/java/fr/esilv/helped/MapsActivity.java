@@ -2,6 +2,7 @@ package fr.esilv.helped;
 
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -9,6 +10,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
@@ -35,23 +37,48 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
+
+    private Marker MyMarker1;
+    private Marker MyMarker2;
+    private Marker MyMarker3;
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        LatLng marker1 = new LatLng(48.890151,2.253556);
-        LatLng marker2 = new LatLng(48.897803,2.242299);
-        LatLng marker3 = new LatLng(48.901139,2.250332);
 
-        mMap.addMarker(new MarkerOptions().position(marker1).title("Window cleaning"));
+        mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener()
+        {
+
+            @Override
+            public void onInfoWindowClick(Marker arg0) {
+                if(arg0 != null && arg0.getTitle().equals("Mow the lawn")){
+                    Intent intent1 = new Intent(MapsActivity.this, profile_JacquelineDLV.class);
+                    startActivity(intent1);}
+
+                if(arg0 != null && arg0.getTitle().equals("Furniture assembly")){
+                    Intent intent1 = new Intent(MapsActivity.this, profile_jojoR.class);
+                    startActivity(intent1);}
+
+                if(arg0 != null && arg0.getTitle().equals("Window cleaning")){
+                    Intent intent1 = new Intent(MapsActivity.this, profile_JC92.class);
+                    startActivity(intent1);}
+            }
+        });
+
+        LatLng marker1 = new LatLng(48.890151, 2.253556);
+        LatLng marker2 = new LatLng(48.897803, 2.242299);
+        LatLng marker3 = new LatLng(48.901139, 2.250332);
+
+        MyMarker1 = mMap.addMarker(new MarkerOptions().position(marker1).title("Mow the lawn").snippet("JacquelineDeLaVille"));
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(marker1, 13));
 
-        mMap.addMarker(new MarkerOptions().position(marker2).title("Furniture assembly"));
+        MyMarker2 = mMap.addMarker(new MarkerOptions().position(marker2).title("Furniture assembly").snippet("JojoDEV4"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(marker2));
 
-        mMap.addMarker(new MarkerOptions().position(marker3).title("Mow the lawn"));
+        MyMarker3 = mMap.addMarker(new MarkerOptions().position(marker3).title("Window cleaning").snippet("JeanCharles92"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(marker3));
+
+
     }
-
-
 
 }

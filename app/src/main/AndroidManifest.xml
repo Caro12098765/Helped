@@ -44,6 +44,10 @@
         <activity android:name=".sign_up" />
         <activity android:name=".start" />
         <activity android:name=".profileCreation" />
+        <activity android:name=".profile_JC92" />
+        <activity android:name=".profile_jojoR" />
+        <activity android:name=".profile_JacquelineDLV" />
+        <activity android:name=".contact" />
     </application>
 
 </manifest>
