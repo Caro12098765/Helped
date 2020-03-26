@@ -7,4 +7,5 @@
     <string name="bottom_navigation_menu_help">Help</string>
     <string name="bottom_navigation_menu_beHelped">Be Helped</string>
     <string name="bottom_navigation_menu_question">Questions?</string>
+    <string name="title_activity_maps2">Map</string>
 </resources>

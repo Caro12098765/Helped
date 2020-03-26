@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_page);
 
+        //Show or hide password button not working
         /*password = findViewById(R.id.password);
         btn = findViewById(R.id.btn5);
         btn.setOnClickListener(new View.OnClickListener() {
@@ -37,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.signIN_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                EditText email_java = (EditText)findViewById(R.id.email);
+                Toast.makeText(getApplicationContext(), "Welcome back "+email_java.getText().toString(), Toast.LENGTH_LONG).show();
                 startActivity(new Intent(MainActivity.this, MapsActivity.class));
             }
         });

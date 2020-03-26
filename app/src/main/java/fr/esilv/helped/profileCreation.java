@@ -27,7 +27,7 @@ public class profileCreation extends AppCompatActivity {
         findViewById(R.id.save).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(profileCreation.this, MapsActivity.class));
+                startActivity(new Intent(profileCreation.this, MapsActivity2.class));
             }
         });
 

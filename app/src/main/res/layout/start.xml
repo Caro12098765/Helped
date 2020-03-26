@@ -30,17 +30,30 @@
         app:layout_constraintTop_toBottomOf="@id/logo"  />
 
     <TextView
-        android:id="@+id/text"
+    android:id="@+id/text"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Welcome in the Helped community ! You are now a helper. Here you can find people arround you ready to help you, ready to fix your problems and you can help others too ! Enjoy HELPED !"
+    android:fontFamily="sans-serif-light"
+    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+    android:layout_marginTop="60dp"
+    android:layout_marginRight="30dp"
+    android:layout_marginLeft="30dp"
+    android:textAlignment="center"
+    app:layout_constraintTop_toBottomOf="@id/welcome"  />
+
+    <TextView
+        android:id="@+id/text2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Welcome in the Helped community ! You are now a helper. Here you can find people arround you ready to help you, ready to fix your problems and you can help others too ! Enjoy HELPED !"
+        android:text="But first, let's get to know you !"
         android:fontFamily="sans-serif-light"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:layout_marginTop="60dp"
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
         android:textAlignment="center"
-        app:layout_constraintTop_toBottomOf="@id/welcome"  />
+        app:layout_constraintTop_toBottomOf="@id/text"  />
 
 
 
@@ -54,7 +67,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:fontFamily="monospace"
-        app:layout_constraintTop_toBottomOf="@id/text"
+        app:layout_constraintTop_toBottomOf="@id/text2"
         android:layout_marginTop="80dp"
         style="?android:attr/borderlessButtonStyle"
         android:background="@drawable/button_background"

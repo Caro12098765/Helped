@@ -3,10 +3,8 @@ package fr.esilv.helped;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.FragmentActivity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -16,16 +14,23 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-
+    private MapsActivity2 activity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
 
+        this.activity = this;
+
+        AlertDialog.Builder PopUpSent = new AlertDialog.Builder(activity);
+        PopUpSent.setTitle("What do we do now?");
+        PopUpSent.setMessage("On this page you can see all the users around you who ask for help. Click on a marker to see what they need.");
+
+        PopUpSent.show();
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
@@ -59,15 +64,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             @Override
             public void onInfoWindowClick(Marker arg0) {
                 if(arg0 != null && arg0.getTitle().equals("Mow the lawn")){
-                    Intent intent1 = new Intent(MapsActivity.this, profile_JacquelineDLV.class);
+                    Intent intent1 = new Intent(MapsActivity2.this, profile_JacquelineDLV.class);
                     startActivity(intent1);}
 
                 if(arg0 != null && arg0.getTitle().equals("Furniture assembly")){
-                    Intent intent1 = new Intent(MapsActivity.this, profile_jojoR.class);
+                    Intent intent1 = new Intent(MapsActivity2.this, profile_jojoR.class);
                     startActivity(intent1);}
 
                 if(arg0 != null && arg0.getTitle().equals("Window cleaning")){
-                    Intent intent1 = new Intent(MapsActivity.this, profile_JC92.class);
+                    Intent intent1 = new Intent(MapsActivity2.this, profile_JC92.class);
                     startActivity(intent1);}
             }
         });
